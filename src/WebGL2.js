@@ -6,21 +6,21 @@ class WebGL2 {
     this.textureUnitMap = null
     this.textureUnitCounter = 0
 
-    if (typeof window !== 'undefined') {
-      // this.canvas = document.createElement('canvas')
-      this.context = this.canvas.getContext('webgl2')
+    // if (typeof window !== 'undefined') {
+    //   this.canvas = document.createElement('canvas')
+    //   this.context = this.canvas.getContext('webgl2')
 
-      const gl = this.context
-      if (gl) {
-        this.isSupported = true
-        gl.getExtension('EXT_color_buffer_float')
-        this.MAX_TEXTURE_SIZE = gl.getParameter(gl.MAX_TEXTURE_SIZE)
-        this.MAX_TEXTURE_IMAGE_UNITS = gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS)
-        this.init()
-      } else {
-        console.log('Unable to initialize WebGL2 -- your browser may not support it.')
-      }
-    }
+    //   const gl = this.context
+    //   if (gl) {
+    //     this.isSupported = true
+    //     gl.getExtension('EXT_color_buffer_float')
+    //     this.MAX_TEXTURE_SIZE = gl.getParameter(gl.MAX_TEXTURE_SIZE)
+    //     this.MAX_TEXTURE_IMAGE_UNITS = gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS)
+    //     this.init()
+    //   } else {
+    //     console.log('Unable to initialize WebGL2 -- your browser may not support it.')
+    //   }
+    // }
   }
 
   /**
