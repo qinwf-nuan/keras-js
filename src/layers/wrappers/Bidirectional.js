@@ -76,20 +76,20 @@ export default class Bidirectional extends Layer {
       let outShape = yForward.tensor.shape.slice()
       let y = new Tensor([], outShape)
       ops.addeq(y.tensor, yForward.tensor)
-      ops.addeq(y.tensor, yBackward.tensor)
+      ops.addeq(y.tensor, yBackward.tensor.step(-1))
       x.tensor = y.tensor
     } else if (this.mergeMode === 'mul') {
       let outShape = yForward.tensor.shape.slice()
       let y = new Tensor([], outShape)
       ops.assigns(y.tensor, 1)
       ops.muleq(y.tensor, yForward.tensor)
-      ops.muleq(y.tensor, yBackward.tensor)
+      ops.muleq(y.tensor, yBackward.tensor.step(-1))
       x.tensor = y.tensor
     } else if (this.mergeMode === 'ave') {
       let outShape = yForward.tensor.shape.slice()
       let y = new Tensor([], outShape)
       ops.addeq(y.tensor, yForward.tensor)
-      ops.addeq(y.tensor, yBackward.tensor)
+      ops.addeq(y.tensor, yBackward.tensor.step(-1))
       ops.divseq(y.tensor, 2)
       x.tensor = y.tensor
     }
