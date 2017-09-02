@@ -7,7 +7,7 @@ class WebGL2 {
     this.textureUnitCounter = 0
 
     if (typeof window !== 'undefined') {
-      this.canvas = document.createElement('canvas')
+      // this.canvas = document.createElement('canvas')
       this.context = this.canvas.getContext('webgl2')
 
       const gl = this.context
