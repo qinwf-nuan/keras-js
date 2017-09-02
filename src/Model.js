@@ -49,10 +49,10 @@ export default class Model {
 
     // specifies that data files are from local file system
     // only in node
-    this.filesystem = typeof window !== 'undefined' ? false : filesystem
+    this.filesystem = filesystem
 
     // flag to enable GPU where possible (disable in node environment)
-    this.gpu = typeof window !== 'undefined' ? gpu : false
+    this.gpu = false
     // flag to enable GPU pipeline mode where possible
     this.pipeline = this.gpu ? pipeline : false
     // flag to enable 0 ms pauses after layer computation calls
